@@ -1,0 +1,3 @@
+/home/molattam/Development/testing/c/build/CMakeFiles/myapp.dir
+/home/molattam/Development/testing/c/build/CMakeFiles/edit_cache.dir
+/home/molattam/Development/testing/c/build/CMakeFiles/rebuild_cache.dir
