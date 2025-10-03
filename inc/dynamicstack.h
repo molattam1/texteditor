@@ -7,10 +7,10 @@ typedef struct {
     int top;
 } Stack;
 
-int init_stack(Stack *s, int initial_size);
-int push(Stack *s, int value);
-int pop(Stack *s);
-void print_stack(Stack *s);
-void clean(Stack *s);
+int stack_init(Stack *s, int initial_size);
+int stack_push(Stack *s, int value);
+int stack_pop(Stack *s);
+void stack_print(Stack *s);
+void stack_clean(Stack *s);
 
 #endif /* DYNAMICSTACK_H */

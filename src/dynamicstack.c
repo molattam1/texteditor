@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "dynamicstack.h"
 
-int init_stack(Stack *s, int initial_size) {
+int stack_init(Stack *s, int initial_size) {
     s->size = initial_size;
     s->data = malloc(s->size * sizeof(int));
     if(s->data == NULL){
@@ -12,7 +12,7 @@ int init_stack(Stack *s, int initial_size) {
     return 0;
 }
 
-int push(Stack *s, int value) {
+int stack_push(Stack *s, int value) {
     if(s->top + 1 >= s->size) {
         int *temp;
         int newSize = s->size * 2;
@@ -33,12 +33,12 @@ int push(Stack *s, int value) {
     return 0;
 }
 
-int isEmpty(Stack *s) {
+int stack_isEmpty(Stack *s) {
     return s->top == -1;
 }
 
-int pop(Stack *s) {
-    if(isEmpty(s)) {
+int stack_pop(Stack *s) {
+    if(stack_isEmpty(s)) {
         printf("stack is already empty cannot pop.\n");
         return -1;
     }
@@ -46,7 +46,7 @@ int pop(Stack *s) {
     return 0;
 }
 
-void print_stack(Stack *s) {
+void stack_print(Stack *s) {
     printf("=== Stack ===\n");
     for(int i = s->top; i > -1; i--) {
         printf("%d\n", s->data[i]);
@@ -54,7 +54,7 @@ void print_stack(Stack *s) {
     printf("=== END ===\n");
 }
 
-void clean(Stack *s) {
+void stack_clean(Stack *s) {
     free(s->data);
     s->data = NULL;
     s->size = 0;
